@@ -37,7 +37,7 @@ jobs:
 
       - 
         name: Copy WAR to Docker Context
-        run: cp target/myapp.war $GITHUB_WORKSPACE/target/myapp.war
+        run: cp target/myapp.war $GITHUB_WORKSPACE/target/
       -
         name: Build and push
         uses: docker/build-push-action@v5

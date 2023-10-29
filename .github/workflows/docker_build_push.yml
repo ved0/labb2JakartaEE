@@ -24,20 +24,9 @@ jobs:
       - 
         name: Checkout
         uses: actions/checkout@v4
-
-      - 
-        name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          java-version: '16'
-          distribution: 'adopt'
       - 
         name: Build WAR
         run: mvn package
-
-      - 
-        name: Copy WAR to Docker Context
-        run: cp target/myapp.war $GITHUB_WORKSPACE/target/
       -
         name: Build and push
         uses: docker/build-push-action@v5

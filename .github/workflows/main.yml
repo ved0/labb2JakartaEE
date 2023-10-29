@@ -24,4 +24,4 @@ jobs:
           context: .
           file: ./Dockerfile  # Adjust the path to your Dockerfile if needed.
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest 
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest

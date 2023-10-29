@@ -9,6 +9,23 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v2
+
+      - 
+        name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '16'
+
+      - 
+        name: Build WAR
+        run: mvn package
+
+      - 
+        name: Copy WAR to Docker Context
+        run: cp target/myapp.war $GITHUB_WORKSPACE/target/myapp.war
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3

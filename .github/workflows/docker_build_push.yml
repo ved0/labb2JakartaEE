@@ -34,6 +34,9 @@ jobs:
         name: Build WAR
         run: mvn package
       -
+        name: Copy WAR to Docker Context
+        run: cp target/myapp.war /tmp/buildkit-mount1013333159/target
+      -
         name: Build and push
         uses: docker/build-push-action@v5
         with:

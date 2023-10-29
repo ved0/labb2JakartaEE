@@ -35,7 +35,7 @@ jobs:
         run: mvn package
       -
         name: Copy WAR to Docker Context
-        run: cp target/myapp.war $GITHUB_WORKSPACE/myapp.war
+        run: cp target/myapp.war myapp.war
       -
         name: Build and push
         uses: docker/build-push-action@v5

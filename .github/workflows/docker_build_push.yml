@@ -42,3 +42,5 @@ jobs:
         with:
           push: true
           tags: vedadz/warehouse:latest
+          context: .
+          file: ./Dockerfile

@@ -40,6 +40,5 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./target
           push: true
           tags: vedadz/warehouse:latest

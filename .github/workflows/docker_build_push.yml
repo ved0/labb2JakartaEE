@@ -32,7 +32,10 @@ jobs:
           distribution: 'adopt'
       -   
         name: Build WAR
-        run: mvn package
+        run: mvn package --file pom.xml
+      -
+        name: Copy WAR to Docker Context
+        run: mv target/myapp.war myapp.war
       -
         name: Build and push
         uses: docker/build-push-action@v5

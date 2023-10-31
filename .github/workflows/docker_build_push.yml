@@ -34,12 +34,9 @@ jobs:
         name: Build WAR
         run: mvn package
       -
-        name: Copy WAR to Docker Context
-        run: cp target/myapp.war $GITHUB_WORKSPACE/myapp.war
-      -
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: $GITHUB_WORKSPACE/myapp.war
+          context: ./target
           push: true
           tags: vedadz/warehouse:latest
